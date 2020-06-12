@@ -14,6 +14,7 @@
 - сервер RabbitMq
 - сервер MongoDb v.3.4
 - Ruby 2.3
+- gemfile.rb
 
 
 ## Инструкция по эскплуатации
