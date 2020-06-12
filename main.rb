@@ -1,8 +1,5 @@
 require_relative 'gemfile'
 
-require 'json'
-
-
 config = YAML.load(File.read(ARGV[0]))
 Mongoid.load!(File.expand_path(config['db']['mongoid']), :development)
 
