@@ -1,7 +1,13 @@
-require_relative 'gemfile'
+require 'yaml'
+require 'mongoid'
+require 'bunny'
+require 'json'
 
-config = YAML.load(File.read(ARGV[0]))
-Mongoid.load!(File.expand_path(config['db']['mongoid']), :development)
+require_relative 'models/user'
+require_relative 'functions'
+
+config = YAML.load_file(ARGV[0])
+Mongoid.load!((config['db']['mongoid']), :development)
 
 
 STDOUT.sync = true

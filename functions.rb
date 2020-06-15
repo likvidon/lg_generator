@@ -17,15 +17,12 @@ end
 
 
 def password_generation(len, compl)
-  if compl == 'low'
-    return [*('0'..'9')].sample(len).join
-  end
-
-  if compl == 'middle'
-    return [*('A'..'Z'), *('a'..'z')].sample(len).join
-  end
-
-  if compl == 'hard'
-    return [*('A'..'Z'), *('a'..'z'), *('0'..'9')].sample(len).join
-  end
+  return case compl
+           when 'low'
+  	     [*('0'..'9')].sample(len).join
+ 	   when 'middle'
+     	     [*('A'..'Z'), *('a'..'z')].sample(len).join
+	   when 'hard'
+	     [*('A'..'Z'), *('a'..'z'), *('0'..'9')].sample(len).join
+	   end
 end
